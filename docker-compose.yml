@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  simple-nginx-video-server:
+    container_name: "simple-nginx-video-server"
+    build: .
+    environment:
+    - URI_SECRETS=NDU5YTEwZDY1MzQzMjY1NDlmYmZlYzQ3
+    volumes:
+      - ./samples/videos:/var/www/videos
+    ports:
+      - '80:80'
