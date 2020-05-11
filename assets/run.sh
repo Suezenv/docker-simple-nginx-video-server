@@ -7,7 +7,15 @@ then
       exit 1
 fi
 
-cat /assets/video_server.conf.dist | sed  "s/##URI_SECRETS##/${URI_SECRETS}/g" > /etc/nginx/conf.d/video_server.conf
+REMOTE_IP_FROM="remote_addr"
+
+if [ ! -z "$USE_HTTP_X_FORWARDED_FOR" ]
+then
+    REMOTE_IP_FROM="http_x_forwarded_for"
+else
+fi
+
+cat /assets/video_server.conf.dist | sed  "s/##URI_SECRETS##/${URI_SECRETS}/g" | sed  "s/##REMOTE_IP_FROM##/${REMOTE_IP_FROM}/g" > /etc/nginx/conf.d/video_server.conf
 
 echo '## ==== Start Nginx ==== ##'
 echo 'Able to server file in <host>://videos/* files'

@@ -4,7 +4,7 @@ server {
     location /videos {
         root /var/www;
         secure_link $arg_md5,$arg_expires;
-        secure_link_md5 "$secure_link_expires$uri$remote_addr ##URI_SECRETS##";
+        secure_link_md5 "$secure_link_expires$uri$##REMOTE_IP_FROM## ##URI_SECRETS##";
 
         if ($secure_link = "") { return 403; }
         if ($secure_link = "0") { return 410; }
