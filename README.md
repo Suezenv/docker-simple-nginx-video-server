@@ -8,8 +8,9 @@ This docker is able to server videos from `/var/www` in `videos` directory with 
 build it as normal
 
 ```
-  docker build -t suezenv/simple-nginx-video-server:<version> . && docker push suezenv/simple-nginx-video-server:<version> 
-  docker tag  suezenv/simple-nginx-video-server:<version> suezenv/simple-nginx-video-server:latest && docker push suezenv/simple-nginx-video-server:latest
+  export SIMPLE_NGINX_VIDEO_VERSION=<version>
+  docker build -t suezenv/simple-nginx-video-server:$SIMPLE_NGINX_VIDEO_VERSION . && docker push suezenv/simple-nginx-video-server:$SIMPLE_NGINX_VIDEO_VERSION 
+  docker tag  suezenv/simple-nginx-video-server:$SIMPLE_NGINX_VIDEO_VERSION suezenv/simple-nginx-video-server:latest && docker push suezenv/simple-nginx-video-server:latest
 ```
 
 # Dev 
