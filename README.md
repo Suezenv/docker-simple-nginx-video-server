@@ -1,7 +1,7 @@
 Simple nginx video server
 =========================
 
-This docker is able to server videos from /var/www/videos with secure link
+This docker is able to server videos from `/var/www` in `videos` directory with secure link
 
 # Build
 
@@ -29,6 +29,7 @@ You can use docker-compose to test Dockerfile and script
 To generate secrets, you can simple use this command `date +%s | sha256sum | base64 | head -c 32 ; echo`
 
 
+
 like this : https://www.nginx.com/blog/securing-urls-secure-link-module-nginx-plus/
 
 To generate link you can use  : 
@@ -52,3 +53,8 @@ An now you can call url like this :
 ```
   http://<host>/videos/<path>/<video_file>?md5=<token>&expires=<expire-date>
 ```
+
+
+# Options
+
+ - USE_HTTP_X_FORWARDED_FOR=true => use `http_x_forwarded_for` instead of `remote_addr` for remote ip address
