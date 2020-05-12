@@ -55,7 +55,10 @@ An now you can call url like this :
   http://<host>/videos/<path>/<video_file>?md5=<token>&expires=<expire-date>
 ```
 
+# Required variables : 
+
+ - **URI_SECRETS=<my_secrets>** => define your shared secrets
 
 # Options
 
- - **USE_HTTP_X_FORWARDED_FOR**=true => use `http_x_forwarded_for` instead of `remote_addr` for remote ip address
+ - **USE_HTTP_X_FORWARDED_FOR=true** => use `http_x_forwarded_for` instead of `remote_addr` for remote ip address
