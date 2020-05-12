@@ -58,4 +58,4 @@ An now you can call url like this :
 
 # Options
 
- - USE_HTTP_X_FORWARDED_FOR=true => use `http_x_forwarded_for` instead of `remote_addr` for remote ip address
+ - **USE_HTTP_X_FORWARDED_FOR**=true => use `http_x_forwarded_for` instead of `remote_addr` for remote ip address
